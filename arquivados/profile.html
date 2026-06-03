@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fitness Pup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <meta charset="UTF-8">
+    <!--esta linha 6 permite character encoding
+    esta é uma tag de HTML que permite usar emojis, acentos, etc-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--makes layout responsive on phones. torna a página adaptativa ao 
+    dispositivo onde está-->
+</head>
+
+<body>
+<header class="header">
+        <a href="index.html"><img src="./img/logo.png" alt="Fitness Pup Logo"></a>
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        
+        <div id="signup">
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="login.html">Logout</a>
+            <a href="register.html">My Plan</a>
+        </div>
+    </header>
+
+<main class="profile-container">
+    <section class="profile-hero">
+        <div class="profile-avatar">
+            <img src="./img/user-avatar.png" alt="User Avatar">
+        </div>
+        <div class="profile-info">
+            <h1>Name Member</h1>
+            <p class="username">@member_222</p>
+            <p class="bio">Just trying to be healthy without leaving my puppy behind!!</p>
+            <button class="edit-btn">Edit Profile</button>
+        </div>
+    </section>
+    <!--SEMI-atenção: não sei se é suposto os nomes, emails, fotos estarem assim hardcoded-->
+    <section class="upcoming-sessions">
+    <h2>Upcoming Sessions</h2>
+    <div class="sessions-container">
+        <div class="session-card">
+            <div class="session-date-box">
+                <span class="day">24</span>
+                <span class="month">APR</span>
+            </div>
+            <div class="session-main">
+                <div class="session-info">
+                    <h3>Zumba Class</h3>
+                    <p><i class="icon">🕒</i> 10:30 AM • 45 min</p>
+                    <p><i class="icon">👤</i> Trainer: Daenarys Targaryen</p>
+                </div>
+                <div class="session-actions">
+                    <button class="btn-details">Details</button>
+                    <button class="btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="session-card">
+            <div class="session-date-box secondary">
+                <span class="day">30</span>
+                <span class="month">APR</span>
+            </div>
+            <div class="session-main">
+                <div class="session-info">
+                    <h3>Park HIIT Circuit</h3>
+                    <p><i class="icon">🕒</i> 05:00 PM • 60 min</p>
+                    <p><i class="icon">👤</i> Trainer: Jon Snow</p>
+                </div>
+                <div class="session-actions">
+                    <button class="btn-details">Details</button>
+                    <button class="btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="stats-grid">
+        <div class="stat-card">
+            <h3><a href="workout_history.html">Workouts</a></h3>              
+            <p class="stat-value">42</p>
+        </div>
+        <div class="stat-card">
+            <h3>Weekly Streak</h3>
+            <p class="stat-value">12 Weeks</p>
+        </div>
+        
+    </section>
+
+    <section class="training-focus">
+    <h2>Most Trained Parts</h2>
+    <div class="focus-container">
+        <div class="focus-item">
+            <div class="focus-label">
+                <span>Legs</span>
+                <span>75%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <div class="focus-item">
+            <div class="focus-label">
+                <span>Back</span>
+                <span>50%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress secondary" style="width: 50%;"></div>
+            </div>
+        </div>
+
+        <div class="focus-item">
+            <div class="focus-label">
+                <span>Arms</span>
+                <span>40%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 40%;"></div>
+            </div>
+        </div>
+
+        <div class="focus-item">
+            <div class="focus-label">
+                <span>Core</span>
+                <span>90%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress secondary" style="width: 90%;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class "badges-section">
+        <h2>My Achievments</h2>
+        <div class="badges-grid">
+            <div class="badge-card-earned">
+                <div class="badge-icon">
+                    <img src="./img/badge_early_bird.png">
+                </div>
+                <div class="badge-info">
+                    <h4>Early Bird</h4>
+                    <p>5 AM Sessions</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</main>
+<!-- abaixo disto estavam coisas mais gerais do site todo-->
+
+    <footer class="footer">
+       <div class="footer-table">
+           <div class="footer-col">
+               <h2>Fitness Pup</h2>
+               <p>Your premier pet-friendly fitness destination for achieving your health goals</p>
+           </div>
+           <div class="footer-col">
+               <h2>Quick Links</h2>
+               <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="pricing.html">Pricing</a></li>
+                   <li><a href="about.html">About Us</a></li>
+                   <li><a href="register.html">Register</a></li>
+                   <li><a href="login.html">Login</a></li>
+               </ul>
+           </div>
+           <div class="footer-col">
+               <h2>For Members</h2>
+               <ul>
+                   <li><a href="classes.html">Classes</a></li>
+                   <li><a href="trainers.html">Trainers</a></li>
+                   <li><a href="equipment.html">Equipment</a></li>
+                   <li><a href="profile.html">Profile</a></li>
+               </ul>
+           </div>
+           <div class="footer-col">
+               <h2>Contact Us</h2>
+               <p>sala b321 feup</p>
+               <p>Porto, Portugal</p>
+               <p>bringYourDog@fitnesspup.com</p>
+               <p>900 000 000</p>
+           </div>
+       </div>
+
+
+       <div class="footer-bottom">
+           <p>&copy; 2026 Fitness Pup. All rights reserved.</p>
+       </div>
+
+
+   </footer>
+</body>
+
+</html>
+
+
+<!--que mais quero criar
+    workout history (se calhar podia ser uma proxima pagina quando se clica em workouts)
+    -->

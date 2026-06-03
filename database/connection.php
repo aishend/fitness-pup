@@ -1,0 +1,21 @@
+<?php
+// database/connection.php
+
+function getDatabaseConnection() {
+    try {
+
+        $dbh = new PDO('sqlite:' . __DIR__ . '/database.db');
+
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+        $dbh->exec('PRAGMA foreign_keys = ON;');
+
+        return $dbh;
+
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
+}
+?>

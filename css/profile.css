@@ -1,0 +1,685 @@
+.profile-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 5%;
+    min-height: 70vh;
+}
+
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    .profile-avatar img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--color-primary);
+    }
+
+    .profile-info {
+        h1 { margin: 0; font-size: 2rem; }
+        .username { color: #888; margin-bottom: 1rem; }
+        .bio { max-width: 400px; line-height: 1.6; }
+
+        .edit-btn {
+            margin-top: 1rem;
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--color-dark);
+            background: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: var(--color-dark);
+                color: white;
+            }
+
+            &:visited {
+                color: var(--color-dark);
+            }
+        }
+    }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    .stat-card {
+        background: white;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        border-top: 6px solid var(--color-primary);
+        &:nth-child(2) {
+            border-top-color: var(--color-secondary);
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 a{ /*preciso de especificar que é o objeto a*/
+            text-decoration: none;
+            color:#666;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-dark);
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+    }
+
+}
+
+.pets-section {
+    margin-top: 2rem;
+
+    .pets-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        h2 {
+            margin: 0;
+        }
+    }
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.vacc-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+.vacc-badge.vacc-yes { background: #e6f4ea; color: #2d6a3f; }
+.vacc-badge.vacc-no  { background: #fde8e8; color: #8b1a1a; }
+
+.pet-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.pet-card {
+    background: white;
+    border: 2px solid var(--color-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+        border-color: var(--color-primary);
+    }
+
+    .pet-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background: var(--color-secondary);
+        border-bottom: 2px solid var(--color-dark);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &:hover .pet-photo img {
+        transform: scale(1.05);
+    }
+
+    .pet-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin: 0;
+        }
+
+        .pet-breed {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0;
+        }
+
+        .pet-age {
+            font-size: 0.85rem;
+            color: #777;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.badges-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/*podia criar aqui umas definições para editar o badge-card mas eu já
+estou a escolher imagens com sombra e etc. mas se mudar o tipo de imagens que
+escolho convém fazer isso*/
+
+.badge-card:hover{
+    transform: translateY(-5px);
+}
+
+.badge-icon img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /*cabe perfeitinho e não dá stretch*/
+    margin-bottom: 1rem;
+}
+
+.badge-info h4{
+    margin: 0;
+    font-size: 1.1rem;
+    color:var(--color-dark);
+}
+
+.badge-info p{
+    margin: 0.3rem 0 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Container da Secção */
+.badges-section {
+    margin-top: 3rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--color-primary);
+        padding-left: 15px;
+    }
+}
+
+/* O "Contorno" do Card */
+.badge-card-earned {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px; /* Bordas bem arredondadas */
+    text-align: center;
+    border: 2px solid #f0f0f0; /* Borda leve inicial */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.badge-info {
+    h4 {
+        margin: 0.5rem 0 0.2rem;
+        font-weight: 700;
+        color: var(--color-dark);
+    }
+
+    p {
+        font-size: 0.85rem;
+        color: #888;
+        margin: 0;
+    }
+}
+
+.training-focus {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background: var(--color-dark);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    color: var(--color-bg-light);
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--color-secondary);
+        padding-left: 15px;
+    }
+}
+
+.focus-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.focus-item {
+    width: 100%;
+}
+
+.focus-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-bg-light);
+}
+
+/* A calha da barra */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a barra interna não sai das bordas */
+}
+
+/* A parte preenchida da barra */
+.progress {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+.progress.secondary {
+    background-color: var(--color-secondary);
+}
+
+/* Pequeno efeito para a secção não ficar estática */
+.training-focus:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+
+/*com a ediçao da fonte geral e etc é necessário
+apertar mais com isto*/
+.profile-container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.badges-section {
+    margin-top: 3.5rem;
+}
+
+.badges-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+    border-left: 5px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0;
+}
+
+.profile-hero {
+    padding: 2.5rem 3rem;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.stats-grid,
+.training-focus {
+    margin-top: 3.5rem;
+}
+
+.focus-container {
+    gap: 1.2rem;
+}
+
+
+.upcoming-sessions {
+    margin-top: 3.5rem;
+}
+
+.upcoming-sessions h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+.sessions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.session-card {
+    background: white;
+    display: flex;
+    align-items: stretch;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.session-card:hover {
+    transform: translateX(5px);
+}
+
+.session-date-box {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    font-weight: 800;
+    min-width: 80px;
+}
+
+.session-date-box.secondary {
+    background: var(--color-secondary);
+}
+
+.session-date-box .day {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.session-date-box .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.session-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+}
+
+.session-info h3 {
+    margin: 0 0 0.4rem 0;
+    color: var(--color-dark);
+}
+
+.session-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.2rem 0;
+}
+
+.session-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-details, .btn-cancel {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-details {
+    background: var(--color-dark);
+    color: white;
+}
+
+.btn-details:hover {
+    background: #2a2f35;
+}
+
+.btn-cancel {
+    background: #f8f8f8;
+    color: #cc4444;
+}
+
+.btn-cancel:hover {
+    background: #fee;
+}
+
+@media (max-width: 600px) {
+    .session-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .session-actions {
+        width: 100%;
+    }
+    .btn-details, .btn-cancel {
+        flex: 1;
+    }
+}
+
+/* Trainer Reviews */
+.trainer-reviews-section {
+    margin-top: 3.5rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--color-secondary);
+        padding-left: 15px;
+    }
+}
+
+.trainer-reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trainer-review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--color-secondary);
+}
+
+.trainer-review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+}
+
+.trainer-review-meta {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.trainer-review-comment {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Class History */
+.class-history-section {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--color-primary);
+        padding-left: 15px;
+    }
+}
+
+.class-history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.class-history-card {
+    background: white;
+    display: flex;
+    align-items: stretch;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateX(5px);
+    }
+}
+
+.history-date-box {
+    background: #e8e8e8;
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    font-weight: 800;
+    min-width: 80px;
+
+    .day { font-size: 1.8rem; line-height: 1; }
+    .month { font-size: 0.8rem; text-transform: uppercase; }
+}
+
+.history-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    gap: 1rem;
+}
+
+.history-info {
+    h3 { margin: 0 0 0.3rem 0; color: var(--color-dark); }
+    p { font-size: 0.9rem; color: #666; margin: 0; }
+}
+
+.history-review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Star display for submitted reviews */
+.review-display {
+    text-align: right;
+}
+
+.review-stars {
+    font-size: 1.2rem;
+    color: #f5a623;
+    letter-spacing: 2px;
+}
+
+.review-comment {
+    font-size: 0.85rem;
+    color: #555;
+    font-style: italic;
+    margin: 0.3rem 0 0 0;
+    max-width: 300px;
+}
+
+.btn-delete-review {
+    background: none;
+    border: none;
+    color: #cc4444;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+
+    &:hover { background: #fee; }
+}
+
+/* Interactive star rating in modal */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.2rem;
+    padding: 0.3rem 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2.2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.1s;
+    line-height: 1;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f5a623;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: #f5a623;
+}
+
+@media (max-width: 600px) {
+    .history-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .history-review {
+        align-items: flex-start;
+    }
+    .review-comment {
+        max-width: 100%;
+    }
+}

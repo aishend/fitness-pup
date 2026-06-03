@@ -1,0 +1,18 @@
+@import url('schedule_calendar.css');
+
+.pet-rooms-title {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--color-dark);
+}
+
+.pet-rooms-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.room-filter-group {
+    max-width: 300px;
+    flex: 1;
+}

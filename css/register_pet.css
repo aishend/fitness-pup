@@ -1,0 +1,127 @@
+.register-pet-hero {
+    background-color: var(--color-secondary);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--color-dark);
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+}
+
+.register-pet-wrapper {
+    max-width: 520px;
+    margin: 2rem auto 3rem;
+    padding: 0 5%;
+}
+
+#registerPetForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pet-photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--color-dark);
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .edit-btn {
+        cursor: pointer;
+        padding: 8px 20px;
+        background: var(--color-dark);
+        color: white;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+
+        &:hover {
+            background: var(--color-primary);
+            color: var(--color-dark);
+        }
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-weight: 700;
+        color: var(--color-dark);
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 0.8rem;
+        border: 2px solid var(--color-dark);
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        outline: none;
+
+        &:focus {
+            border-color: var(--color-primary);
+        }
+    }
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--color-primary);
+        cursor: pointer;
+    }
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-cancel {
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-dark);
+        }
+    }
+}

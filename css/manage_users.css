@@ -1,0 +1,461 @@
+.users-list,
+.edit-user-container {
+    padding: 0 5%;
+    margin-bottom: 2rem;
+}
+
+.manage-header {
+    background: var(--color-secondary);;
+    padding: 2rem 5%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    h1 {
+        font-size: 2rem;
+        color: var(--color-dark);
+        margin: 0 0 0.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: var(--color-dark);
+        opacity: 0.8;
+        margin: 0;
+    }
+}
+
+.manage-controls {
+    padding: 1.5rem 5%;
+    margin-bottom: 2.5rem;
+    background-color: rgba(118, 234, 215, 0.05);
+    border-radius: 12px;
+
+    .filter-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.2rem;
+
+        .filter-btn {
+            background-color: var(--color-bg-light);
+            color: var(--color-dark);
+            font-weight: 500;
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .filter-btn.active {
+            background-color: var(--color-primary);
+        }
+    }
+
+    form {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+
+        input {
+            flex: 1;
+            min-width: 180px;
+            background-color: var(--color-bg-light);
+            color: var(--color-dark);
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+    }
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.user-card {
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    padding: 1.3rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    .user-info {
+        margin-bottom: 1rem;
+
+        .user-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+
+        .user-email {
+            font-size: 0.8rem;
+            color: #777;
+            word-break: break-word;
+        }
+    }
+
+    .user-role {
+        margin-bottom: 1rem;
+    }
+
+    .user-actions {
+        margin-top: auto;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        form {
+            display: contents; /* Ignora a caixa do form */
+        }
+
+        .btn,
+        .badge-admin {
+            flex: 1;
+            min-width: 70px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge-admin {
+            background-color: rgba(255, 74, 74, 0.15);
+            color: var(--color-error);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 6px;
+        }
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &.member {
+        background-color: rgba(118, 234, 215, 0.15);
+        color: var(--color-primary);
+    }
+
+    &.trainer,
+    &.pet-trainer {
+        background-color: rgba(196, 251, 109, 0.15);
+        color: #7a9500;
+    }
+
+    &.admin,
+    &.badge-admin {
+        background-color: rgba(255, 74, 74, 0.15);
+        color: var(--color-error);
+    }
+}
+
+.role-select {
+    width: 100%;
+    background: rgba(255, 74, 74, 0.15);
+    color: var(--color-error);
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    option {
+        background-color: white;
+        color: var(--color-dark);
+    }
+}
+
+.edit-form-wrapper {
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    select:disabled {
+        background-color: #f0f0f0;
+        color: #999;
+        cursor: not-allowed;
+    }
+
+    small {
+        font-size: 0.8rem;
+        color: #666;
+    }
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.user-info-sidebar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    h3 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--color-dark);
+        margin: 0 0 1.2rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid rgba(118, 234, 215, 0.15);
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-size: 0.9rem;
+            color: var(--color-dark);
+            word-break: break-word;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .users-list,
+    .edit-user-container {
+        padding: 0 4%;
+    }
+
+    .manage-header {
+        padding: 1.5rem 4%;
+
+        h1 {
+            font-size: 1.4rem;
+        }
+    }
+
+    .manage-controls {
+        padding: 1.2rem 4%;
+
+        form {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .edit-form-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+}
+
+.schedule-hero {
+    background: var(--color-secondary);
+    padding: 3rem 5%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    h1 {
+        font-size: 2.5rem;
+        color: var(--color-dark);
+        margin: 0 0 0.5rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: var(--color-dark);
+        opacity: 0.9;
+        margin: 0;
+    }
+}
+
+.schedule-wrapper {
+    padding: 0 5%;
+    margin-bottom: 3rem;
+}
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    align-items: start;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+
+    .day-column {
+        background: #fff;
+        border-radius: 12px;
+        border: 2px solid var(--color-dark);
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+
+        .day-header {
+            background: var(--color-dark);
+            color: #fff;
+            text-align: center;
+            padding: 0.75rem;
+
+            h3 {
+                margin: 0;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        .no-classes-msg {
+            text-align: center;
+            color: #aaa;
+            padding: 2rem 1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .class-slot {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.enrolled {
+                background-color: rgba(118, 234, 215, 0.1);
+            }
+
+            .class-time {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #555;
+            }
+
+            .class-title {
+                margin: 0;
+                font-size: 1.1rem;
+                color: var(--color-dark);
+            }
+
+            .class-trainer {
+                margin: 0;
+                font-size: 0.9rem;
+                color: #777;
+            }
+
+            .class-capacity {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: var(--color-dark);
+                margin-bottom: 0.4rem;
+            }
+
+            .card-actions, .slot-actions {
+                margin-top: 0.5rem;
+                display: flex;
+                gap: 0.4rem;
+
+                form {
+                    display: contents;
+                }
+
+                .btn {
+                    flex: 1;
+                    padding: 6px 12px;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+}
+
+.modal-overlay {
+    .modal-body {
+        .modal-pets {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1rem;
+
+            .modal-pet-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.75rem 1rem;
+                background: var(--color-secondary);
+                border: 2px solid var(--color-dark);
+                border-radius: 8px;
+
+                .pet-name {
+                    font-weight: 700;
+                }
+                .pet-breed {
+                    font-size: 0.9rem;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

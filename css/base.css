@@ -1,0 +1,26 @@
+:root {
+    --color-bg-light: #EEEEEE;   /* branco */
+    --color-dark: #393E46;       /* cinzento escuro */
+    --color-primary: #76EAD7;    /* azul */
+    --color-secondary: #C4FB6D;  /* verde */
+
+    /*para mensagens de erro*/
+    --color-success-bg: rgba(196, 251, 109, 0.2);
+    --color-error: #ff4a4a;
+    --color-error-bg: rgba(255, 74, 74, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: var(--color-dark);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

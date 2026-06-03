@@ -1,0 +1,67 @@
+.login-section,
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-light);
+    padding: 2rem;
+}
+
+.login-box,
+.register-box {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    border: 2px solid var(--color-dark);
+}
+
+.login-box { max-width: 400px; }
+.register-box { max-width: 450px; }
+
+.login-header,
+.register-header {
+    margin-bottom: 2rem;
+
+    h2 {
+        font-size: 2rem;
+        color: var(--color-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .login-logo,
+    .register-logo {
+        height: 50px;
+        width: auto;
+    }
+}
+
+.access-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+
+    .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+.access-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+
+    a {
+        color: var(--color-dark);
+        font-weight: bold;
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}
